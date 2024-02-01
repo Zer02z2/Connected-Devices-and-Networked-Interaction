@@ -1,0 +1,26 @@
+/* * {
+    border: 0.1rem solid black;
+} */
+
+body {
+    border: 0.3rem dotted black;
+    margin: 5rem;
+    padding: 2rem;
+    display: flex;
+}
+
+.right {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+img {
+    border: 0.1rem solid black;
+}
+
+#count {
+    font-size: 3em;
+    text-align: center;
+}
+
