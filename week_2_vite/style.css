@@ -2,22 +2,31 @@
     border: 0.1rem solid red
 } */
 
-body {
-  margin: 5rem;
-  padding: 2rem;
+html, body
+{
+    height: 100%;
+    margin:0;
+    padding:0;
+}
+.background {
+  height: 100%;
+  width: 100%;
+  position: relative;
   display: flex;
+  justify-content: center;
+  /* border: 0.1rem solid black; */
 }
 
-.right {
-  width: 50%;
-  margin-top: 2rem;
-  margin-left: auto;
-  margin-right: 0;
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rem solid red;
+  animation: rotate 4.5s linear infinite;
 }
 
 img {
-  border: 0.1rem solid black;
-  animation: rotate 4.5s linear infinite;
+  width: 30rem;
 }
 
 @keyframes rotate {
@@ -28,9 +37,3 @@ img {
     transform: rotate(360deg);
   } 
 }
-
-#count {
-  font-size: 3em;
-  text-align: center;
-}
-
