@@ -1,6 +1,6 @@
-* {
+/* * {
     border: 0.1rem solid red
-}
+} */
 
 body {
   margin: 5rem;
@@ -17,6 +17,16 @@ body {
 
 img {
   border: 0.1rem solid black;
+  animation: rotate 4.5s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  } 
 }
 
 #count {
