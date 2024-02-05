@@ -11,29 +11,57 @@ html, body
 .background {
   height: 100%;
   width: 100%;
-  position: relative;
   display: flex;
-  justify-content: center;
   /* border: 0.1rem solid black; */
 }
 
-.spinner {
+.background> * {
+  height: 100%;
+  width: 50%;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1rem solid red;
-  animation: rotate 4.5s linear infinite;
+}
+
+.spinner {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+
+.left .spinner {
+  animation: leftRotate 4.5s linear infinite;
+}
+
+.right .spinner {
+  animation: rightRotate 4.5s linear infinite;
 }
 
 img {
   width: 30rem;
 }
 
-@keyframes rotate {
+.left img {
+  transform: scaleX(-1);
+}
+
+@keyframes leftRotate {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  } 
+}
+
+@keyframes rightRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
   } 
 }
