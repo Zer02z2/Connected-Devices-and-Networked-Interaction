@@ -1,6 +1,6 @@
-/* * {
+* {
     border: 0.1rem solid red
-} */
+}
 
 html, body
 {
@@ -18,50 +18,62 @@ html, body
 .background> * {
   height: 100%;
   width: 50%;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.spinner {
-  position: absolute;
+.leftContainer {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  padding-right: 10%;
+}
+
+.rightContainer {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  padding-left: 10%;
+}
+
+.leftLines {
+  width: 10%;
+}
+
+.rightLines {
+  transform: scaleX(-1);
+  width: 10%;
+}
+
+.elephant {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50%;
+  width: 40%;
 }
 
-.left .spinner {
-  animation: leftRotate 4.5s linear infinite;
+.elephant img {
+  width: 100%;
 }
 
-.right .spinner {
-  animation: rightRotate 4.5s linear infinite;
+.leftColumn .elephant {
+  animation: rotate 4.5s linear infinite;
 }
 
-img {
-  width: 30rem;
-}
-
-.left img {
+.leftColumn .elephant img {
   transform: scaleX(-1);
 }
 
-@keyframes leftRotate {
+.rightColumn .elephant {
+  animation: rotate 4.5s reverse linear infinite;
+}
+
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
-  } 
-}
-
-@keyframes rightRotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
   } 
 }
