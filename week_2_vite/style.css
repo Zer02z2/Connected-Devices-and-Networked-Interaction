@@ -1,5 +1,26 @@
-* {
+/* * {
     border: 0.1rem solid red
+} */
+
+@font-face {
+
+  font-family: 'Ubuntu';
+  font-weight: 400;
+  src: url('/fonts/Ubuntu-Bold.woff2') format('woff2');
+}
+
+@font-face {
+
+  font-family: 'Ubuntu';
+  font-weight: 300;
+  src: url('/fonts/Ubuntu-Medium.woff2') format('woff2'),
+}
+
+@font-face {
+
+  font-family: 'Ubuntu';
+  font-weight: 200;
+  src: url('/fonts/Ubuntu-Regular.woff2') format('woff2'), 
 }
 
 html, body
@@ -12,7 +33,7 @@ html, body
   height: 100%;
   width: 100%;
   display: flex;
-  /* border: 0.1rem solid black; */
+  justify-content: center;
 }
 
 .background> * {
@@ -23,30 +44,21 @@ html, body
   align-items: center;
 }
 
-.leftColumn .inputField {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.rightColumn .inputField {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
 
 .leftContainer {
   width: 100%;
   display: flex;
   justify-content: right;
-  padding-right: 10%;
+  padding-right: 30%;
+  padding-top: 10%;
 }
 
 .rightContainer {
   width: 100%;
   display: flex;
   justify-content: left;
-  padding-left: 10%;
+  padding-left: 30%;
+  padding-top: 10%;
 }
 
 .leftLines {
@@ -62,7 +74,7 @@ html, body
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 60%;
 }
 
 .elephant img {
@@ -70,7 +82,7 @@ html, body
 }
 
 .leftColumn .elephant {
-  animation: rotate 4.5s linear infinite;
+  /* animation: rotate 4.5s linear infinite; */
 }
 
 .leftColumn .elephant img {
@@ -78,7 +90,43 @@ html, body
 }
 
 .rightColumn .elephant {
-  animation: rotate 4.5s reverse linear infinite;
+  /* animation: rotate 4.5s reverse linear infinite; */
+}
+
+.bottom {
+  position: absolute;
+  width: auto;
+  height: auto;
+  bottom: 1%;
+}
+
+.bottom textarea {
+  font-family: Ubuntu;
+  font-weight: 400;
+  font-size: 4em;
+  text-indent: 10em;
+  color: rgb(61, 61, 61);
+  padding: 2rem;
+  width: 80vw;
+  height: 20vh;
+  background-color: rgb(255, 255, 255);
+  border: 0cap;
+  caret-color: rgb(153, 153, 153);
+}
+
+.bottom span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: Ubuntu;
+  font-weight: 400;
+  font-size: 4em;
+  padding: 2rem;;
+  color: rgb(170, 170, 170);
+}
+
+textarea:focus {
+  outline: 0;
 }
 
 @keyframes rotate {
