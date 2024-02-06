@@ -23,6 +23,18 @@ html, body
   align-items: center;
 }
 
+.leftColumn .inputField {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.rightColumn .inputField {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .leftContainer {
   width: 100%;
   display: flex;
