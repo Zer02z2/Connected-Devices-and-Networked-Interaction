@@ -5,9 +5,16 @@ let leftElephant = document.querySelector('div.leftColumn .elephant');
 let rightElephant = document.querySelector('div.rightColumn .elephant');
 let span = document.querySelector('div.bottom span');
 
+let leftLines = [document.querySelector('div.leftColumn .imageContainer .leftLines'),
+                document.querySelector('div.leftColumn .imageContainer .rightLines')];
+let rightLines = [document.querySelector('div.rightColumn .imageContainer .leftLines'),
+                document.querySelector('div.rightColumn .imageContainer .rightLines')];
+
 let talkingSide = 'left';
 
-console.log(leftElephant);
+for (const i of leftLines) {
+    i.style.visibility = 'visible';
+}
 
 const addPhrase = (speaker, listener) => {
 
@@ -28,15 +35,34 @@ const addPhrase = (speaker, listener) => {
     textarea.value = null;
 }
 
+const resetAnimation = (el) => {
+
+    el.style.animation = 'none';
+    el.offsetHeight;
+    el.style.animation = null;
+}
+
 leftElephant.addEventListener('click', () => {
 
     talkingSide = 'left';
     span.innerHTML = 'Left Elephant says:';
+    for (const i of leftLines) {
+        i.style.visibility = 'visible';
+    }
+    for (const i of rightLines) {
+        i.style.visibility = 'hidden';
+    }
 });
 rightElephant.addEventListener('click', () => {
 
     talkingSide = 'right';
     span.innerHTML = 'Right Elephant says:';
+    for (const i of leftLines) {
+        i.style.visibility = 'hidden';
+    }
+    for (const i of rightLines) {
+        i.style.visibility = 'visible';
+    }
 });
 
 // Enter key to send input
@@ -46,10 +72,13 @@ textarea.addEventListener('keyup', (e) => {
 
         if (talkingSide === 'left') {
             addPhrase(leftWords, rightWords);
-            leftElephant.style.animation = 'rotate 4.5s linear';
+            resetAnimation(leftElephant);
+            leftElephant.style.animation = 'rotate 0.5s linear';
         }
         else {
             addPhrase(rightWords, leftWords);
+            resetAnimation(rightElephant);
+            rightElephant.style.animation = 'rotate 0.5s reverse linear';
         }
     }
 })
