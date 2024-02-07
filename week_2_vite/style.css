@@ -1,6 +1,6 @@
-/* * {
+* {
     border: 0.1rem solid red
-} */
+}
 
 @font-face {
 
@@ -139,8 +139,15 @@ textarea:focus {
   height: 50%;
   width: 40%;
   bottom: 60%;
-  align-items: left;
   justify-content: flex-end;
+}
+
+.leftColumn .conversation {
+  right: 0;
+}
+
+.rightColumn .conversation {
+  left: 0;
 }
 
 p {
@@ -152,9 +159,10 @@ p {
   overflow-wrap: break-word;
 }
 
-.leftColumn .conversation {
-  right: 0;
+.rightColumn .conversation p {
+  text-align: right;
 }
+
 
 @keyframes rotate {
   from {
