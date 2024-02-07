@@ -1,8 +1,20 @@
-// let button = document.getElementById('duplicate-elephant');
-// let countNum = document.getElementById('count');
-// let rightColumn = document.getElementsByClassName('right')[0];
+let textarea = document.querySelector("div.bottom textarea");
+let leftWords = document.querySelector("div.leftColumn .conversation");
 
-// let count = 0;
+// Enter key to send input
+textarea.addEventListener('keyup', (e) => {
+
+    if (e.key === 'Enter') {
+
+        let lastWord = leftWords.children[leftWords.children.length - 1];
+        if (typeof lastWord !== 'undefined') lastWord.style.color = 'rgb(170, 170, 170)';
+
+        let phrase = document.createElement('p');
+        phrase.innerHTML = textarea.value + '<br><br>';
+        leftWords.appendChild(phrase);
+        textarea.value = null;
+    }
+})
 
 // button.addEventListener('click', () => {
 //   let image = document.createElement('img');

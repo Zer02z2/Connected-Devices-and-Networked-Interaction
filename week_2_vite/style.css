@@ -1,6 +1,6 @@
-* {
+/* * {
     border: 0.1rem solid red
-}
+} */
 
 @font-face {
 
@@ -28,13 +28,6 @@ html, body
   height: 100%;
   margin:0;
   padding:0;
-}
-
-p {
-  font-family: Ubuntu;
-  font-weight: 300;
-  font-size: 3em;
-  margin: 0;
 }
 
 .background {
@@ -144,10 +137,19 @@ textarea:focus {
   flex-direction: column;
   position: absolute;
   height: 50%;
-  width: 20%;
-  bottom: 40%;
+  width: 40%;
+  bottom: 60%;
   align-items: left;
   justify-content: flex-end;
+}
+
+p {
+  font-family: Ubuntu;
+  font-weight: 400;
+  font-size: 2em;
+  color: rgb(61, 61, 61);
+  margin: 0;
+  overflow-wrap: break-word;
 }
 
 .leftColumn .conversation {
