@@ -1,8 +1,13 @@
-let textarea = document.querySelector("div.bottom textarea");
-let leftWords = document.querySelector("div.leftColumn .conversation");
-let rightWords = document.querySelector("div.rightColumn .conversation");
+let textarea = document.querySelector('div.bottom textarea');
+let leftWords = document.querySelector('div.leftColumn .conversation');
+let rightWords = document.querySelector('div.rightColumn .conversation');
+let leftElephant = document.querySelector('div.leftColumn .elephant');
+let rightElephant = document.querySelector('div.rightColumn .elephant');
+let span = document.querySelector('div.bottom span');
 
 let talkingSide = 'left';
+
+console.log(leftElephant);
 
 const addPhrase = (speaker, listener) => {
 
@@ -23,6 +28,15 @@ const addPhrase = (speaker, listener) => {
     textarea.value = null;
 }
 
+leftElephant.addEventListener('click', () => {
+    talkingSide = 'left';
+    span.innerHTML = 'Left Elephant says:';
+});
+rightElephant.addEventListener('click', () => {
+    talkingSide = 'right';
+    span.innerHTML = 'Right Elephant says:';
+});
+
 // Enter key to send input
 textarea.addEventListener('keyup', (e) => {
 
@@ -30,11 +44,9 @@ textarea.addEventListener('keyup', (e) => {
 
         if (talkingSide === 'left') {
             addPhrase(leftWords, rightWords);
-            talkingSide = 'right';
         }
         else {
             addPhrase(rightWords, leftWords);
-            talkingSide = 'left';
         }
     }
 })

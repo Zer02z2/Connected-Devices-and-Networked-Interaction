@@ -78,6 +78,8 @@ html, body
   justify-content: center;
   align-items: center;
   width: 60%;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .elephant img {
