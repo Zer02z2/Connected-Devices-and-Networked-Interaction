@@ -1,6 +1,6 @@
-/* * {
+* {
     border: 0.1rem solid red
-} */
+}
 
 @font-face {
 
@@ -25,10 +25,18 @@
 
 html, body
 {
-    height: 100%;
-    margin:0;
-    padding:0;
+  height: 100%;
+  margin:0;
+  padding:0;
 }
+
+p {
+  font-family: Ubuntu;
+  font-weight: 300;
+  font-size: 3em;
+  margin: 0;
+}
+
 .background {
   height: 100%;
   width: 100%;
@@ -42,32 +50,34 @@ html, body
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-
-.leftContainer {
+.imageContainer {
   width: 100%;
   display: flex;
+  padding-bottom: 10%;
+}
+
+.leftColumn .imageContainer {
   justify-content: right;
   padding-right: 30%;
-  padding-top: 10%;
 }
 
-.rightContainer {
-  width: 100%;
-  display: flex;
+.rightColumn .imageContainer {
   justify-content: left;
   padding-left: 30%;
-  padding-top: 10%;
 }
 
 .leftLines {
   width: 10%;
+  visibility: hidden;
 }
 
 .rightLines {
   transform: scaleX(-1);
   width: 10%;
+  visibility: hidden;
 }
 
 .elephant {
@@ -97,7 +107,7 @@ html, body
   position: absolute;
   width: auto;
   height: auto;
-  bottom: 1%;
+  bottom: 5%;
 }
 
 .bottom textarea {
@@ -127,6 +137,21 @@ html, body
 
 textarea:focus {
   outline: 0;
+}
+
+.conversation {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 50%;
+  width: 20%;
+  bottom: 40%;
+  align-items: left;
+  justify-content: flex-end;
+}
+
+.leftColumn .conversation {
+  right: 0;
 }
 
 @keyframes rotate {
