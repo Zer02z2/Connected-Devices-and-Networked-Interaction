@@ -29,10 +29,12 @@ const addPhrase = (speaker, listener) => {
 }
 
 leftElephant.addEventListener('click', () => {
+
     talkingSide = 'left';
     span.innerHTML = 'Left Elephant says:';
 });
 rightElephant.addEventListener('click', () => {
+
     talkingSide = 'right';
     span.innerHTML = 'Right Elephant says:';
 });
@@ -44,6 +46,7 @@ textarea.addEventListener('keyup', (e) => {
 
         if (talkingSide === 'left') {
             addPhrase(leftWords, rightWords);
+            leftElephant.style.animation = 'rotate 4.5s linear';
         }
         else {
             addPhrase(rightWords, leftWords);
