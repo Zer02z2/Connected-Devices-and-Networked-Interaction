@@ -54,12 +54,12 @@ html, body
 
 .leftColumn .imageContainer {
   justify-content: right;
-  padding-right: 30%;
+  padding-right: 40%;
 }
 
 .rightColumn .imageContainer {
   justify-content: left;
-  padding-left: 30%;
+  padding-left: 40%;
 }
 
 .leftLines {
@@ -77,7 +77,7 @@ html, body
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 70%;
   background-color: transparent;
   cursor: pointer;
   border: none
@@ -110,6 +110,7 @@ html, body
   background-color: rgb(255, 255, 255);
   border: 0cap;
   caret-color: rgb(153, 153, 153);
+  resize: none;
 }
 
 .bottom span {
@@ -133,7 +134,7 @@ textarea:focus {
   position: absolute;
   height: 50%;
   width: 30%;
-  bottom: 60%;
+  bottom: 50%;
   justify-content: flex-end;
 }
 
