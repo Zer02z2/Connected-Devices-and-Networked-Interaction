@@ -3,8 +3,19 @@
         <title>Websocket Test</title>
     </head>
     <body>
+        <p id="socket_data" style="font-size: 20em;">hi</p>
         <script>
+            const socket = new WebSocket('ws://localhost:1880/testing');
+            socket.addEventListener('open', handleSocketOpen);
+            socket.addEventListener('message', handleSocketMessages);
 
+            function handleSocketOpen() {
+                document.body.style.backgroundColor = 'green';
+            }
+            function handleSocketMessages(e) {
+                document.body.style.backgroundColor = 'white';
+                document.getElementById("socket_data").innerHTML = e.data;
+            }
         </script>
     </body>
-</html>>
+</html>
