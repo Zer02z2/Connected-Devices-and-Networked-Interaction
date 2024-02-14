@@ -1,0 +1,117 @@
+[
+    {
+        "id": "fecf8ce580eabce1",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1282a3f29ebb13af",
+        "type": "debug",
+        "z": "fecf8ce580eabce1",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "dbe7f62d2a4c9671",
+        "type": "websocket out",
+        "z": "fecf8ce580eabce1",
+        "name": "",
+        "server": "7322f211813ef955",
+        "client": "",
+        "x": 510,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "54fda26aa3afaa0a",
+        "type": "inject",
+        "z": "fecf8ce580eabce1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "dbe7f62d2a4c9671",
+                "1282a3f29ebb13af"
+            ]
+        ]
+    },
+    {
+        "id": "4274fc81b2d657a2",
+        "type": "udp in",
+        "z": "fecf8ce580eabce1",
+        "name": "",
+        "iface": "",
+        "port": "2222",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "utf8",
+        "x": 200,
+        "y": 100,
+        "wires": [
+            [
+                "1282a3f29ebb13af",
+                "dbe7f62d2a4c9671"
+            ]
+        ]
+    },
+    {
+        "id": "0ea440851add4c62",
+        "type": "tcp in",
+        "z": "fecf8ce580eabce1",
+        "name": "",
+        "server": "server",
+        "host": "",
+        "port": "2222",
+        "datamode": "stream",
+        "datatype": "utf8",
+        "newline": "\\r\\n",
+        "topic": "",
+        "trim": false,
+        "base64": false,
+        "tls": "",
+        "x": 300,
+        "y": 440,
+        "wires": [
+            [
+                "1282a3f29ebb13af",
+                "dbe7f62d2a4c9671"
+            ]
+        ]
+    },
+    {
+        "id": "7322f211813ef955",
+        "type": "websocket-listener",
+        "path": "/testing",
+        "wholemsg": "false"
+    }
+]
