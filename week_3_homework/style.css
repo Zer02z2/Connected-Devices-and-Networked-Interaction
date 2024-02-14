@@ -1,0 +1,170 @@
+/* * {
+    border: 0.1rem solid red
+} */
+
+@font-face {
+
+  font-family: 'Ubuntu';
+  font-weight: 400;
+  src: url('../public/fonts/Ubuntu-Bold.woff2') format('woff2');
+}
+
+@font-face {
+
+  font-family: 'Ubuntu';
+  font-weight: 300;
+  src: url('../public/fonts/Ubuntu-Medium.woff2') format('woff2'),
+}
+
+@font-face {
+
+  font-family: 'Ubuntu';
+  font-weight: 200;
+  src: url('../public/fonts/Ubuntu-Regular.woff2') format('woff2'), 
+}
+
+html, body
+{
+  height: 100%;
+  margin:0;
+  padding:0;
+}
+
+.background {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.background> * {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.imageContainer {
+  width: 100%;
+  display: flex;
+  padding-top: 0%;
+}
+
+.leftColumn .imageContainer {
+  justify-content: right;
+  padding-right: 40%;
+}
+
+.rightColumn .imageContainer {
+  justify-content: left;
+  padding-left: 40%;
+}
+
+.leftLines {
+  width: 10%;
+  visibility: hidden;
+}
+
+.rightLines {
+  transform: scaleX(-1);
+  width: 10%;
+  visibility: hidden;
+}
+
+.elephant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  background-color: transparent;
+  cursor: pointer;
+  border: none
+}
+
+.elephant img {
+  width: 100%;
+}
+
+.leftColumn .elephant img {
+  transform: scaleX(-1);
+}
+
+.bottom {
+  position: absolute;
+  width: auto;
+  height: auto;
+  bottom: 5%;
+}
+
+.bottom textarea {
+  font-family: Ubuntu;
+  font-weight: 400;
+  font-size: 4em;
+  text-indent: 10em;
+  color: rgb(61, 61, 61);
+  padding: 2rem;
+  width: 80vw;
+  height: 20vh;
+  background-color: rgb(255, 255, 255);
+  border: 0cap;
+  caret-color: rgb(153, 153, 153);
+  resize: none;
+}
+
+.bottom span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: Ubuntu;
+  font-weight: 400;
+  font-size: 4em;
+  padding: 2rem;;
+  color: rgb(170, 170, 170);
+}
+
+textarea:focus {
+  outline: 0;
+}
+
+.conversation {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 50%;
+  width: 30%;
+  bottom: 50%;
+  justify-content: flex-end;
+}
+
+.leftColumn .conversation {
+  right: 0;
+}
+
+.rightColumn .conversation {
+  left: 0;
+}
+
+p {
+  font-family: Ubuntu;
+  font-weight: 400;
+  font-size: 2em;
+  color: rgb(61, 61, 61);
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.rightColumn .conversation p {
+  text-align: right;
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  } 
+}
