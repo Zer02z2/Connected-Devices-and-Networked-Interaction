@@ -24,6 +24,7 @@ function handleSocketOpen() {
 function handleSocketMessages(e) {
     document.body.style.backgroundColor = 'white';
     let data = e.data.split(',');
+    console.log(data);
     
     if (data[0] > 0) switchToLeft();
     else if (data[0] < 0) switchToRight();

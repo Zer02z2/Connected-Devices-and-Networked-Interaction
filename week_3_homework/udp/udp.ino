@@ -1,5 +1,18 @@
 #include <WiFiNINA.h>
 #include "config.h"
+#include <Arduino_LSM6DS3.h>
+
+const int yellow = 2;
+const int blue = 3;
+const int red = 4;
+const int green = 12;
+
+int lastYellow = 0;
+int lastBlue= 0;
+int lastRed = 0;
+int lastGreen = 0;
+
+bool ready = true;
 
 WiFiUDP udpClient;
 
@@ -14,6 +27,12 @@ const int localPort = 5000;
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(9600);
+
+  if (!IMU.begin()) {
+    Serial.println("Failed to initialize IMU!");
+
+    while (1);
+  }
   //retry connection until WiFi is connected successfully
   while (WiFi.status() != WL_CONNECTED) {
     Serial.println("Attempting to connect to SSID: ");
@@ -29,11 +48,47 @@ void setup() {
 char messageBuffer[256];
 
 void loop() {
-  if (millis()%100 < 10) {  
-    Serial.println("hi");  
+
+  if (millis()%100 < 10) {    
     //add something more interesting here
+
+    float x, y, z;
+    int thisYellow = digitalRead(yellow);
+    int thisBlue = digitalRead(blue);
+    int thisRed = digitalRead(red);
+    int thisGreen = digitalRead(green);
+    String message = "none";
+
+    if (IMU.accelerationAvailable()) {
+      IMU.readAcceleration(x, y, z);
+    }
+
+    if (ready == true) {
+
+      if (thisYellow == 1) {
+        message = "yellow";
+        ready = false;
+      }
+      else if (thisBlue == 1) {
+        message = "blue";
+        ready = false;
+      }
+      else if (thisRed == 1) {
+        message = "red";
+        ready = false;
+      }
+      else if (thisGreen == 1) {
+        message = "green";
+        ready = false;
+      }
+    }
+
+    if (thisYellow == 0 && thisBlue == 0 && thisRed == 0 && thisGreen == 0) ready = true;
+    
     udpClient.beginPacket(server, port);
-    udpClient.print(millis());
+    udpClient.print(x);
+    udpClient.print(",");
+    udpClient.print(message);
     udpClient.endPacket();
     delay(10);
   }
