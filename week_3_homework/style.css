@@ -98,7 +98,7 @@ html, body
   bottom: 5%;
 }
 
-.bottom textarea {
+.bottom p2 {
   font-family: Ubuntu;
   font-weight: 400;
   font-size: 4em;
@@ -124,9 +124,6 @@ html, body
   color: rgb(170, 170, 170);
 }
 
-textarea:focus {
-  outline: 0;
-}
 
 .conversation {
   display: flex;
