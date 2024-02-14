@@ -1,3 +1,5 @@
+const socket = new WebSocket('ws://localhost:1880/testing');
+
 let textarea = document.querySelector('div.bottom textarea');
 let leftWords = document.querySelector('div.leftColumn .conversation');
 let rightWords = document.querySelector('div.rightColumn .conversation');
@@ -11,6 +13,17 @@ let rightLines = [document.querySelector('div.rightColumn .imageContainer .leftL
                 document.querySelector('div.rightColumn .imageContainer .rightLines')];
 
 let talkingSide = 'left';
+
+socket.addEventListener('open', handleSocketOpen);
+socket.addEventListener('message', handleSocketMessages);
+
+function handleSocketOpen() {
+    document.body.style.backgroundColor = 'green';
+}
+function handleSocketMessages(e) {
+    document.body.style.backgroundColor = 'white';
+    document.querySelector('textarea').innerHTML = e.data;
+}
 
 for (const i of leftLines) {
     i.style.visibility = 'visible';
