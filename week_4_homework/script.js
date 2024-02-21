@@ -1,18 +1,18 @@
-const broker = "theyonetwork.cloud.shiftr.io";
+const broker = "public.cloud.shiftr.io";
 const mqtt_port = 443; //we use HTTPS port 443 when creating a browser-based MQTT client
 
-const mqtt_user = "theyonetwork";
-const mqtt_pass = "ConnDevSP24";
+const mqtt_user = "public";
+const mqtt_pass = "public";
 const clientID = "ZZZZZZZ";
 
 //the topic incoming messages should be sent to
-const subTopic = "Music";
+const subTopic = "ZZZ's brightness";
 
 const MQTT = new Paho.MQTT.Client(broker, mqtt_port, clientID);
 const sendButton = document.querySelector('#sendMQTTButton');
 
 sendButton.addEventListener('click', () => {
-    sendMQTTMessage('button1', 'clicked');
+    sendMQTTMessage('ZZZ\'s brightness', 'clicked');
 });
 
 MQTT.connect({
