@@ -6,7 +6,7 @@ const mqtt_pass = "ConnDevSP24";
 const clientID = "ZZZZZZZ";
 
 //the topic incoming messages should be sent to
-const subTopic = "device_1";
+const subTopic = "Music";
 
 const MQTT = new Paho.MQTT.Client(broker, mqtt_port, clientID);
 const sendButton = document.querySelector('#sendMQTTButton');
