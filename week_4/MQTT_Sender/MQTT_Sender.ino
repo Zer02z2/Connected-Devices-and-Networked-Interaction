@@ -9,12 +9,12 @@ const char wifi_ssid[] = "sandbox370";
 const char wifi_pass[] = "+s0a+s03!2gether?";
 
 //MQTT broker info: url and port (1883 default for MQTT)
-const char broker[] = "theyonetwork.cloud.shiftr.io";
-const int  port = 1883;
+const char broker[] = "io.adafruit.com";
+const int  port = 8883;
 
 //if needed: broker authentication credentials
-const char mqtt_user[] = "theyonetwork";
-const char mqtt_pass[] = "ConnDevSP24";
+const char mqtt_user[] = "ankycheng";
+const char mqtt_pass[] = "aio_PTuo097Wb65r4YqKsgXk126g0Nzk";
 
 //the topic this device will publish messages to
 const char pubTopic[] = "Zongze's_msg";
