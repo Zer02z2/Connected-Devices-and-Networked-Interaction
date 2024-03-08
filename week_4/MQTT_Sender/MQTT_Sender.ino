@@ -5,16 +5,16 @@ WiFiClient wifi;
 MqttClient mqtt(wifi);
 
 //WiFi network info: ssid and password
-const char wifi_ssid[] = "sandbox370";
-const char wifi_pass[] = "+s0a+s03!2gether?";
+const char wifi_ssid[] = "NewLabMember 2.4GHz Only";
+const char wifi_pass[] = "!Welcome2NewLab!";
 
 //MQTT broker info: url and port (1883 default for MQTT)
-const char broker[] = "io.adafruit.com";
-const int  port = 8883;
+const char broker[] = "9.tcp.ngrok.io";
+const int  port = 24004;
 
 //if needed: broker authentication credentials
-const char mqtt_user[] = "ankycheng";
-const char mqtt_pass[] = "aio_PTuo097Wb65r4YqKsgXk126g0Nzk";
+const char mqtt_user[] = "energy";
+const char mqtt_pass[] = "password";
 
 //the topic this device will publish messages to
 const char pubTopic[] = "Zongze's_msg";
